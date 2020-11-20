@@ -1,0 +1,35 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/Home.vue'
+import Capacity from '../views/Capacity.vue'
+import MaxCarHeight from '../views/MaxCarHeight.vue'
+import Time from '../views/Time.vue'
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/capacity',
+    name: 'Capacity',
+    component: Capacity
+  },
+  {
+    path: '/carheight',
+    name: 'MaxCarHeight',
+    component: MaxCarHeight
+  },
+  {
+    path: '/availability',
+    name: 'Time',
+    component: Time
+  }        
+]
+
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
+
+export default router

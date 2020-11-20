@@ -4,7 +4,7 @@
     <p>
       Je hebt net een bank overvallen en bent op de vlucht. <strong>Waar laat je de auto?!</strong>
     </p>
-    <button>Stash je auto!</button>
+    <router-link to="/capacity"><button>Stash je auto!</button></router-link>
 
     <div class="police-light-left">
       <div></div>
@@ -26,6 +26,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+@font-face {
+  font-family: "kitchen-police";
+  src: url("../assets/fonts/kitchen-police.regular.ttf");
+}
+
+body{
+  overflow: hidden;
+}
+
+h1{
+  font-family: "kitchen-police";
+  font-size: 3em;
+}
+
 h3 {
   margin: 40px 0 0;
 }
