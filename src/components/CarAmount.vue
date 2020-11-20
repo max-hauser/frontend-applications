@@ -2,7 +2,7 @@
   <div class='carAmount'>
     <h1>Car amount</h1>
     <p>
-      Kies de grootte van de garage.
+      Kies de grootte van de garage. (scroll op parkeerplek)
     </p>
 
     <h2>Aantal parkeerplekken: <span>500</span></h2>
