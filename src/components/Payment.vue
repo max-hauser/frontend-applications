@@ -249,7 +249,7 @@
       </g>
     </svg>
 
-    <router-link to="/garages">
+    <router-link to="/garages" @click="safeData">
       <button>Bekijk garages</button>
     </router-link>
   </div>
@@ -260,8 +260,21 @@ export default {
   name: "Payment",
   methods: {
     payment: function(event) {
+      document.querySelector('h2').style.color = "white";
       document.querySelector('h2').innerHTML = event.target.parentNode.id;
-      console.log(event.target.parentNode.id);
+    },
+    safeData(event){
+      event.preventDefault();
+      const payment = document.querySelector('h2').innerHTML;
+      const possiblePayments = ['cash', 'visa', 'pin', 'creditcard'];
+      if(possiblePayments.includes(payment)){
+        localStorage.setItem('payment', payment);
+        this.$router.push('/garages');        
+      }else{
+        document.querySelector('h2').style.color = "red";
+        document.querySelector('h2').innerHTML = "Selecteer een geldige betaalmethode"
+      }
+
     }
   }
 };

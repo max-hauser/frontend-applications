@@ -23,7 +23,7 @@
 
     </div>    
 
-    <router-link to="/payment"><button>Betaalmethode</button></router-link>
+    <router-link to="/payment"  @click="safeData"><button>Betaalmethode</button></router-link>
   </div>
 </template>
 
@@ -53,7 +53,14 @@ export default {
           hour.value--;
         }
       }
-
+    },
+    safeData(event){
+      event.preventDefault();
+      const hour = document.querySelector('#hour').value;
+      const minute = document.querySelector('#minutes').value;
+      const time = hour + ":" + minute;
+      localStorage.setItem('availability', time);
+      this.$router.push('/payment');
     }
   }
 }

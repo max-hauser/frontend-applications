@@ -10,7 +10,7 @@
     <div class="scrollField" @wheel="zoom">
     </div>
 
-    <router-link to="/carheight"><button>Auto hoogte</button></router-link>
+    <router-link to="/carheight" @click="safeData"><button>Auto hoogte</button></router-link>
   </div>
 </template>
 
@@ -36,7 +36,14 @@ export default {
       const textScale = (upperLimit+lowerLimit) - scale; //Maths
 
       viewScale.innerHTML = textScale;
-    }
+    },
+    safeData(event){
+      event.preventDefault();
+      const capacity = parseInt(document.querySelector('h2 span').textContent);
+      
+      localStorage.setItem('Capacity', capacity);
+      this.$router.push('/carheight');
+    } 
   }
 }
 let scale = 500;

@@ -20,6 +20,9 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted: () => {
+    localStorage.clear();
   }
 }
 </script>
@@ -27,17 +30,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-@font-face {
-  font-family: "kitchen-police";
-  src: url("../assets/fonts/kitchen-police.regular.ttf");
-}
-
 body{
   overflow: hidden;
 }
 
 h1{
-  font-family: "kitchen-police";
   font-size: 3em;
 }
 

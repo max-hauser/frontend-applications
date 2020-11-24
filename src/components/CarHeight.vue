@@ -5,7 +5,7 @@
       Kies je auto.
     </p>
 
-    <h2>Selecteer een auto</h2>
+    <h2>Selecteer een auto<span></span></h2>
 
     <div class="cars">
       <img src="../assets/supercar.svg" alt="supercar" @click="carHeight" data-carheight="130">
@@ -15,14 +15,14 @@
     </div>
 
     <div class="electric">
-      <p>Electrisch</p> 
+      <p>Elektrisch</p> 
       <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
       </label>      
     </div>
 
-    <router-link to="/availability"><button>Openingstijden</button></router-link>
+    <router-link to="/availability" @click="safeData"><button>Openingstijden</button></router-link>
   </div>
 </template>
 
@@ -31,12 +31,27 @@ export default {
   name: 'CarHeight',
   methods: {
     carHeight: (event) => {
-      document.querySelector('h2').innerHTML = "Hoogte auto in cm: " + event.target.dataset['carheight'];
-      const allCars = document.querySelectorAll('.cars img');
-      allCars.forEach((car)=>{ car.style.fill = "a8a8a8"; });
-      event.target.style.backgroundcolor = "blue";
-      console.log(event.target);
-    }
+      document.querySelector('h2').style.color = "white";
+      document.querySelector('h2').innerHTML = `Hoogte auto in cm: <span></span>`;
+      document.querySelector('h2 span').innerHTML =  event.target.dataset['carheight']
+    },
+    safeData(event){     
+      event.preventDefault();
+      const carHeight = parseInt(document.querySelector('h2 span').innerHTML);
+      localStorage.setItem('CarHeight', carHeight);
+
+      const electricBtn = document.querySelector('input').checked;
+      localStorage.setItem('electric', electricBtn);
+      console.log(localStorage)
+      if(localStorage.CarHeight != "NaN"){
+        this.$router.push('/availability');
+      }else{
+        console.log('show error message');
+        document.querySelector('h2').innerHTML = "Selecteer een auto";
+        document.querySelector('h2').style.color = "red";
+      }
+      
+    } 
   }
 }
 </script>
