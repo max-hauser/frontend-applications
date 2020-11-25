@@ -68,7 +68,7 @@ let scale = 500;
   margin: 0 auto;
 }
 
-button{
+/* button{
   background-color: #e94560;
   color: #fff;
   border: none;
@@ -80,5 +80,5 @@ button{
   left: 0;
   max-width: 50%;
   margin: 5vh auto;
-}
+} */
 </style>

@@ -70,7 +70,7 @@ export default {
 </script>
 
 <style>
-button{
+/* button{
   background-color: #e94560;
   color: #fff;
   border: none;
@@ -83,7 +83,7 @@ button{
   max-width: 50%;
   margin: 10vh auto;
   display: block;
-}
+} */
 
 input{
   width: 15vw;

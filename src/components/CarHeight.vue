@@ -33,7 +33,16 @@ export default {
     carHeight: (event) => {
       document.querySelector('h2').style.color = "white";
       document.querySelector('h2').innerHTML = `Hoogte auto in cm: <span></span>`;
-      document.querySelector('h2 span').innerHTML =  event.target.dataset['carheight']
+      document.querySelector('h2 span').innerHTML =  event.target.dataset['carheight'];
+
+      const allCars = document.querySelectorAll('.cars img');
+      allCars.forEach((car) => {
+        console.log(car)
+        if(car.className == "clicked"){
+          car.classList.remove('clicked');
+        }
+          event.target.classList.add('clicked');
+      });
     },
     safeData(event){     
       event.preventDefault();
@@ -71,24 +80,19 @@ export default {
     width: 10vw;
   }
 
+  .cars img:hover{
+    cursor: pointer;
+  }
+
+.cars img.clicked{
+  transition: 0.5s;
+  padding-bottom: 10px;
+  box-shadow: 0px 15px 5px -15px #fff;
+}
 
 .slider.round:before {
   border-radius: 50%;
-}  
-
-button{
-  background-color: #e94560;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-size: 1.5em;
-  margin-top: 10vh;
-  box-shadow: 0px 0px 50px 10px #050c1f;
-  left: 0;
-  max-width: 50%;
-  margin: 5vh auto;
-}  
+}
 
 @keyframes slide{
   from{margin-left: -1000px; opacity: 0;}

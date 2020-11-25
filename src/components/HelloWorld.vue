@@ -5,7 +5,6 @@
       Je hebt net een bank overvallen en bent op de vlucht. <strong>Waar laat je de auto?!</strong>
     </p>
     <router-link to="/capacity"><button>Stash je auto!</button></router-link>
-
     <div class="police-light-left">
       <div></div>
     </div> 
@@ -29,11 +28,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-body{
-  overflow: hidden;
-}
-
 h1{
   font-size: 3em;
 }
@@ -53,7 +47,7 @@ a {
   color: #42b983;
 }
 
-button{
+/* button{
   background-color: #e94560;
   color: #fff;
   border: none;
@@ -63,7 +57,7 @@ button{
   margin-top: 10vh;
   box-shadow: 0px 0px 50px 10px #050c1f;
   left: 0;
-}
+} */
 
 
 
@@ -82,12 +76,12 @@ div.police-light-left{
 div.police-light-right{
   width: 100px;
   height: 50vh;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 0px 1000px blue;
-  right: -100px;
-  top: 50vh;
+  margin-right: -130px;
+  float: right;
   animation: rightLight 1s infinite;
 }
 
