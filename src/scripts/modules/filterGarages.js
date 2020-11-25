@@ -10,7 +10,7 @@ async function filterGarages(settings) {
     // Then it gets all the garages and filters it based on the filter results of the user
     // Finally it sends the filtered garages-data to the updateMap function
 
-    const alleGarages = await parkeerData();
+    const alleGarages = await parkeerData();    
 
     const resultaat = alleGarages.filter(garage =>
         garage.betaalmethode == settings.betaalmethode &&
@@ -21,7 +21,13 @@ async function filterGarages(settings) {
         garage.specificaties.opladen >= settings.opladen
     )
 
-    updateMap(resultaat);
+    console.log(resultaat)
+
+    if(resultaat.length == 0){
+        return false;
+    }else{
+        updateMap(resultaat);
+    }
 }
 
 export default filterGarages;

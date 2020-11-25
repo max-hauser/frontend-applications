@@ -1,23 +1,30 @@
 <template>
-  <div class="garagemap">
-    <h1>Beschikbare Garages</h1>
-
+  <div>
     <p class="userData"></p>
 
-    <p class='info'>Hover over een stip voor meer informatie</p>
-
+    <p class='info'></p>
+    <Sirens v-if="showSirens"/>
     <div id="map">
-      <svg width="1200" height="800" />
+      <svg width="1200" height="500" />
     </div>
   </div>
 </template>
 
 <script>
 import filterGarages from "../scripts/modules/filterGarages.js";
+import Sirens from "./Sirens.vue";
 
 export default {
-  name: "GarageMap",
-  mounted: () => {
+  name: "Map",
+  data () {
+    return {
+      showSirens : false
+    }
+  },
+  components: {
+    Sirens
+  },
+  async mounted () {
     const Capacity =  parseInt(localStorage.Capacity);
     const carHeight = parseInt(localStorage.CarHeight);
     const availability = parseInt( localStorage.availability );
@@ -33,16 +40,25 @@ export default {
     }
 
     document.querySelector(".userData").innerHTML = `Capacity: ${Capacity}
-    carHeight: ${carHeight} availability: ${availability} electric: ${electric}`;
+    carHeight: ${carHeight} availability: ${availability} electric: ${electric} payment: ${payment}`;
 
-    filterGarages({
+  const data = {
       betaalmethode: payment,
       altijdWegrijden: "1",
       altijdOpen: "1",
       capaciteit: Capacity,
       maximaleVoertuigHoogte: carHeight,
       opladen: electricCar
-    });
+    }
+
+    //filterGarages(data);
+
+    const resultCheck = await filterGarages(data);
+    
+    if(resultCheck === false){
+      document.querySelector(".info").innerHTML = "Er is geen ontsnapping mogelijk! Geef jezelf maar alvast aan.";
+      this.showSirens = true;
+    }
   }
 };
 </script>

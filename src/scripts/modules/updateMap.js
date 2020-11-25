@@ -23,7 +23,7 @@ async function updateMap(resultaat) {
         height = 500;
 
     var projection = d3.geoMercator()
-        .center([4.88, 52.36])
+        .center([4.80, 52.36])
         .scale(100000)
         .translate([width / 2, height / 2])
 
@@ -43,7 +43,7 @@ async function updateMap(resultaat) {
                 )
                 .attr("stroke", "#0074D9")
                 .call(d3.zoom().on('zoom', () => {
-                    svg.select("g").attr("transform", d3.event.transform);
+                    // svg.select("g").attr("transform", d3.event.transform);
                 }))
                 
             if(resultaat != null){

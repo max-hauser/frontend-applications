@@ -1,24 +1,28 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <HelloWorld msg="AmsterHeist"/>
-  </div> 
+    <Heading msg="AmsterHeist"/>
+    <Description msg="Je hebt net een bank overvallen en bent op de vlucht." str=" Waar laat je de auto?!"/>
+    <router-link to="/capacity"><Button msg="Stash de auto!"/></router-link>
+    <Sirens />
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import Button from '@/components/Button.vue'
+import Heading from '@/components/Heading.vue'
+import Description from '@/components/Description.vue'
+import Sirens from '@/components/Sirens.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Button,
+    Heading,
+    Description,
+    Sirens
+  },mounted: () => {
+    localStorage.clear();
   }
 }
 </script>
-
-<style>
-  body{
-    overflow: hidden;
-  }
-</style>

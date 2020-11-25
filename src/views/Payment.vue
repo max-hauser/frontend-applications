@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <Heading msg="Capaciteit"/>
-    <Description msg="Kies de grootte van de garage. (scroll op parkeerplek)"/>
-    <ParkingSpots />
+    <Heading msg="Betaalmethode"/>
+    <Description msg="Klik op een betaalmethode"/>
+    <Wallet />
   </div>
 </template>
 
@@ -10,14 +10,16 @@
 
 import Heading from '@/components/Heading.vue'
 import Description from '@/components/Description.vue'
-import ParkingSpots from '@/components/ParkingSpots.vue'
+import Wallet from '@/components/Wallet.vue'
+
+console.log(localStorage)
 
 export default {
-  name: 'Capacity',
+  name: 'Payment',
   components: {
     Heading,
     Description,
-    ParkingSpots
-  }
+    Wallet
+  } 
 }
 </script>

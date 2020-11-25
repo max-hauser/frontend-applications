@@ -1,12 +1,5 @@
 <template>
-  <div class='carHeight'>
-    <h1>opening hours</h1>
-    <p>
-      Wanneer wil je weg kunnen rijden?
-    </p>
-
-    <h2>Tijd</h2>
-
+  <div>
     <div class="time-wrapper">
 
         <div class="input-wrapper">
@@ -21,16 +14,23 @@
           <button class="minus-minute" @click="changeNumber">-</button>
         </div>
 
-    </div>    
-
-    <router-link to="/payment"  @click="safeData"><button>Betaalmethode</button></router-link>
+    </div>  
+    <router-link to="/payment" @click="saveData"><Button msg="Betaalmethode"/></router-link>    
   </div>
 </template>
 
 <script>
+
+import Button from '@/components/Button.vue'
+
+console.log(localStorage)
+
 export default {
-  name: 'Availabililty',
-  methods: {
+ name: 'Clock',
+ components: {
+   Button
+ },
+methods: {
     changeNumber: function(event){
 
       const hour = document.querySelector('#hour');
@@ -54,37 +54,19 @@ export default {
         }
       }
     },
-    safeData(event){
-      event.preventDefault();
-      const hour = document.querySelector('#hour').value;
-      const minute = document.querySelector('#minutes').value;
-      const time = hour + ":" + minute;
-      localStorage.setItem('availability', time);
-      this.$router.push('/payment');
-    }
+  saveData(event){
+    event.preventDefault();
+    const hour = document.querySelector('#hour').value;
+    const minute = document.querySelector('#minutes').value;
+    const time = hour + ":" + minute;
+    localStorage.setItem('availability', time);
+    this.$router.push('/payment');
+  }      
   }
 }
-
-
-
 </script>
 
-<style>
-/* button{
-  background-color: #e94560;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-size: 1.5em;
-  margin-top: 20vh;
-  box-shadow: 0px 0px 50px 10px #050c1f;
-  left: 0;
-  max-width: 50%;
-  margin: 10vh auto;
-  display: block;
-} */
-
+<style scoped>
 input{
   width: 15vw;
   height: 15vh;
@@ -129,6 +111,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 88%;
     max-width: initial;
     box-shadow: none;
+    padding: 10px;
+    border: 1px solid #fff;
 }
 
 .time-wrapper {

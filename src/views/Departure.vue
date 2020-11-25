@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <Heading msg="Capaciteit"/>
-    <Description msg="Kies de grootte van de garage. (scroll op parkeerplek)"/>
-    <ParkingSpots />
+    <Heading msg="Vertrekken"/>
+    <Description msg="Wanneer wil je weg kunnen rijden?"/>
+    <Clock />
   </div>
 </template>
 
@@ -10,14 +10,14 @@
 
 import Heading from '@/components/Heading.vue'
 import Description from '@/components/Description.vue'
-import ParkingSpots from '@/components/ParkingSpots.vue'
+import Clock from '@/components/Clock.vue'
 
 export default {
   name: 'Capacity',
   components: {
     Heading,
     Description,
-    ParkingSpots
+    Clock
   }
 }
 </script>

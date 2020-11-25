@@ -1,5 +1,5 @@
 {
-  "name": "frontend-applications",
+  "name": "fa",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -35,9 +35,7 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {
-      "no-console": "off"
-    }
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
