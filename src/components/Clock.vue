@@ -39,18 +39,26 @@ methods: {
       if(event.target.className == "add-minute"){
         if(minute.value < 59){
           minute.value++;
+        }else{
+          minute.value = 0;
         }
       }else if(event.target.className == "minus-minute"){
         if(minute.value > 0){
           minute.value--;
+        }else{
+          minute.value = 59;
         }
       }else if(event.target.className == "add-hour"){
         if(hour.value < 23){
           hour.value++;
+        }else{
+          hour.value = 0;
         }
       }else if(event.target.className == "minus-hour"){
         if(hour.value > 0){
           hour.value--;
+        }else{
+          hour.value = 23;
         }
       }
     },
@@ -113,6 +121,14 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: none;
     padding: 10px;
     border: none;
+}
+
+.input-wrapper button:focus{
+  outline: none;
+}
+
+.input-wrapper button:hover{
+  cursor: pointer;
 }
 
 .time-wrapper {
