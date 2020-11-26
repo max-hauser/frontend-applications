@@ -415,6 +415,7 @@ g#visa:hover{
 
 .car.clicked path, .car.clicked circle{
   fill: orange;
+  stroke: #fffff0;
 }
 
 .car:hover circle,
