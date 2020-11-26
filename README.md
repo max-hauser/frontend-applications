@@ -50,9 +50,17 @@ Firstly, my concept inspiration came from the movie called Baby driver, a bankhe
 
 ### Install guide
 
-You can run it with the vs code extention called 'live server'
+### Step 1: Clone this project
+To clone this project, paste the following line in the terminal:
+```git@github.com:max-hauser/frontend-applications.git```
 
-[Link to the extention](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+### Step 2: Install all packages
+Next up you can install all the packages by using this command: ```npm install i```.
+
+### Step 3: Run project
+
+Now that everything is installed it's time to run the project. You can run it by typing the following code:
+```npm run serve```
 
 ### plagiarism and acknowledgements
 
