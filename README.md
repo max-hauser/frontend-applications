@@ -35,7 +35,7 @@ This datasets is used to determine the coordinates and location of the garages.
 After watching a YouTube video on the movie Baby driver and so I came up with the question above.
 The tricky issue with this concept is that is way too off-topic for the newspaper. But I asked my teacher and he asked the people over at the newspaper and I got the green light afterall. Looking back, this maybe wasn't the best topic to explore, because I didn't have a clear goal. I ended up creating a map which displays parking garages based on the filtered options of the form.
 
-![final-kaart](https://github.com/max-hauser/frontend-data/blob/main/media/final.png)
+![final-kaart](https://github.com/max-hauser/frontend-applications/blob/main/media/homepage.png)
 
 ### Inspiration
 
