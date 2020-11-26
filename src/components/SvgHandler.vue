@@ -272,13 +272,13 @@ export default {
       document.querySelector('p').style.color = "white";
       document.querySelector('p').innerHTML = event.target.parentNode.id;
       const groups = document.querySelectorAll('g');
+
       groups.forEach((g)=>{
-        g.style.stroke = "transparent";
-        g.style.strokeWidth = "0";
-      })
+        g.classList.remove('selected');
+      });
+
       const parent = event.target.closest('g');
-      parent.style.stroke = "white";
-      parent.style.strokeWidth = "5";
+      parent.classList.add('selected');
     }    
   }
 };
@@ -290,8 +290,9 @@ svg {
   margin-top: 10vh;
 }
 
-.click{
-  stroke: "white";
+.selected{
+  stroke: white;
+  stroke-width: 4px;
 }
 
 g#pin:hover,

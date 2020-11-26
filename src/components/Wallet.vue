@@ -32,10 +32,8 @@ export default {
       }
     },
     showMethod(event){
-      if(event.target.closest('g').id != "wallet"){
+      if(event.target.closest('g') != null && event.target.closest('g').id != "wallet"){
         document.querySelector('p').innerHTML = event.target.closest('g').id;
-      }else{
-        document.querySelector('p').innerHTML = "Klik op een betaalmethode";
       }
     }
   }   
