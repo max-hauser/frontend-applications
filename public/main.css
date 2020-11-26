@@ -3,6 +3,10 @@ html{
   color: #fff;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 a{
   text-decoration: none;
 }
