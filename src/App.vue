@@ -1,12 +1,27 @@
 <template>
   <div>
     <div id="nav">
-      <router-link to="/"><img src="./assets/home-icon.svg"></router-link>
+      <router-link to="/" @click="cleanStorage"><img src="./assets/home-icon.svg"></router-link>
     </div>
 
       <router-view/>
   </div>
 </template>
+
+<script>
+
+export default {
+  name: 'App',
+  methods: {
+    cleanStorage: function (event) {
+      event.preventDefault();
+      localStorage.clear();
+      console.log(this);
+      this.$router.push('/');
+    }
+  }
+}
+</script>
 
 <style>
 #app {
