@@ -51,8 +51,6 @@ export default {
       opladen: electricCar
     }
 
-    //filterGarages(data);
-
     const resultCheck = await filterGarages(data);
     
     if(resultCheck === false){
