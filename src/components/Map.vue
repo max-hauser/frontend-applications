@@ -64,9 +64,6 @@ export default {
 </script>
 
 <style>
-body {
-  overflow: auto;
-}
 
 .garage svg {
   width: 800px;
