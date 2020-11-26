@@ -271,6 +271,14 @@ export default {
     payment: function(event) {
       document.querySelector('p').style.color = "white";
       document.querySelector('p').innerHTML = event.target.parentNode.id;
+      const groups = document.querySelectorAll('g');
+      groups.forEach((g)=>{
+        g.style.stroke = "transparent";
+        g.style.strokeWidth = "0";
+      })
+      const parent = event.target.closest('g');
+      parent.style.stroke = "white";
+      parent.style.strokeWidth = "5";
     }    
   }
 };
@@ -282,7 +290,9 @@ svg {
   margin-top: 10vh;
 }
 
-
+.click{
+  stroke: "white";
+}
 
 g#pin:hover,
 g#creditcard:hover,
