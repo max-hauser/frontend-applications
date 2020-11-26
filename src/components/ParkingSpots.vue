@@ -39,7 +39,7 @@ export default {
 
       const textScale = (upperLimit+lowerLimit) - scale; //Maths
 
-      viewScale.innerHTML = textScale;
+      viewScale.innerHTML = Math.round(textScale);
     },
     saveData(event){
       event.preventDefault();
