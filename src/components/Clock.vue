@@ -70,12 +70,12 @@ methods: {
 input{
   width: 15vw;
   height: 15vh;
-  box-shadow: 0px 0px 15px #000 inset;
+  box-shadow: 0px 0px 10px #000 inset;
   font-size: 3em;
   text-align: center;
-  margin: 15px;
+  margin: 0px;
   border: none;
-  border-radius: 5px;
+  border-radius: 0px;
   background: #141423;
   color: #fff;
   position: relative;
@@ -99,7 +99,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .input-wrapper{
     max-width: 20vw;
-    margin: 0 auto;  
+    margin: 50px auto;  
     position: relative;
 }
 
@@ -107,12 +107,12 @@ input[type=number]::-webkit-outer-spin-button {
     background: #141423;
     margin: 0px auto;
     color: #fff;
-    border-radius: 3px;
-    width: 88%;
+    border-radius: 0px;
+    width: 81%;
     max-width: initial;
     box-shadow: none;
     padding: 10px;
-    border: 1px solid #fff;
+    border: none;
 }
 
 .time-wrapper {
